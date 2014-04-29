@@ -39,7 +39,12 @@
 <script type="text/javascript">
  jQuery(document).ready(function() {
 
+
   // validate signup form on keyup and submit
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Letters only please"); 
+
   $("#addPlanForm").validate({
    
     rules: {
@@ -67,17 +72,19 @@
 
     },
     messages: {
-      planName: "please enter the plan",
-      planSpeed: "please enter the speed in numbers",
+      planName: "please enter the plan (only alphabets)",
+      planSpeed: "please enter the speed (only numbers)",
       planType: "please select speed plan",
-      planPrice: "please enter the price",
+      planPrice: "please enter the price (only numbers)",
       planDownloadType:"please select download type",
       planMonthMode:"please select month mode"
     
       
     }
   });
-    
+   
+
+
  });
 </script>
 
