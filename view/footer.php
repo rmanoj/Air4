@@ -43,7 +43,7 @@
   // validate signup form on keyup and submit
   jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-z]+$/i.test(value);
-}, "Letters only please"); 
+}, "please enter plan (only alphabets)"); 
 
   $("#addPlanForm").validate({
    
@@ -72,7 +72,7 @@
 
     },
     messages: {
-      planName: "please enter the plan (only alphabets)",
+     
       planSpeed: "please enter the speed (only numbers)",
       planType: "please select speed plan",
       planPrice: "please enter the price (only numbers)",
